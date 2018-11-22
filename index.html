@@ -7,47 +7,8 @@
         <div id="hide-me">Hide this content</div>
         <div id="print-me">Print this content</div>
         <button id="btn-print" type="button">Print</button>
-        
-        <script>
-            function hideBefoPrint() {
-                document.getElementById("hide-me").style.display = "none";
-                document.getElementById("btn-print").style.display = "none";                        
-            }        
 
-            function showBefoPrint() {
-                document.getElementById("hide-me").style.display = "block";
-                document.getElementById("btn-print").style.display = "block";                        
-            }        
+        <input type="text" name="" id="" autofocus>
 
-
-            function beforePrint () {
-                hideBefoPrint();
-                console.log('before print');        
-            }
-            
-            function afterPrint() {
-                showBefoPrint();
-                console.log('after print');
-            }
-
-            window.onbeforeprint = beforePrint;
-            window.onafterprint = afterPrint;
- 
-            var printHandler = function(mql) {
-                if(mql.matches) {
-                    beforePrint();
-                } else {
-                    afterPrint();
-                }
-            };
- 
-            var mql = window.matchMedia('print');
-            mql.addListener(printHandler);
-
-            document.getElementById("btn-print").addEventListener('click', function () {
-                window.print();                        
-            });
-
-        </script>
     </body>
 </html>
